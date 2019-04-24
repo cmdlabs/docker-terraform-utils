@@ -6,11 +6,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [3.0.0] - 2019-04-24
 ### Breaking
-- Removed terraform as the entrypoint. 
+- Removed terraform as the entrypoint.
 
 ### Added
 - Added PS1 prompt that shows AWS and Terraform Workspace details
 - Added reauth helper script
+
+### Updated
+- terraform to 0.11.13
+- awscli to 1.16.144
 
 ### Removed
 - g++ as it shouldnt be required now we arent building terraform
