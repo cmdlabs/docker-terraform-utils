@@ -1,4 +1,5 @@
-IMAGE_NAME ?= cmdlabs/terraform-utils:testing
+VERSION = 3.0.0
+IMAGE_NAME ?= cmdlabs/terraform-utils:$(VERSION)
 
 build:
 	docker build -t $(IMAGE_NAME) .
