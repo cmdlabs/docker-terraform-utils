@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [4.4.0] - 2019-08-09
 ### Changed
 - Upgraded terraform to 0.12.6
+- Upgraded awscli to 1.16.214
 
 ## [4.3.0] - 2019-07-10
 ### Changed
