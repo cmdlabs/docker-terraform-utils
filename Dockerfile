@@ -13,7 +13,7 @@ RUN curl -L -o /tmp/terraform-docs.tar.gz https://github.com/terraform-docs/terr
     mv /tmp/terraform-docs /usr/local/bin/ && \
     rm -rf /tmp/*
 
-ARG TERRAFORM_VERSION=1.2.9
+ARG TERRAFORM_VERSION=1.3.7
 RUN curl -L -o /tmp/terraform.zip https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
     unzip /tmp/terraform.zip -d /tmp/ && \
     mv /tmp/terraform /usr/local/bin/terraform && \
