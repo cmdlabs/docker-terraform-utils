@@ -1,11 +1,8 @@
-FROM alpine:3.16
+FROM alpine:3.17
 
 RUN mkdir -p /work ~/.tflint.d/plugins
 
-RUN apk add --update --upgrade --no-cache bash ca-certificates curl git openssh-client python3 py3-pip tree zip apk-tools
-
-ARG AWSCLI_VERSION=1.25.69
-RUN pip3 --no-cache-dir install --upgrade awscli==${AWSCLI_VERSION} argparse python-gitlab requests pan-os-python boto3
+RUN apk add --update --upgrade --no-cache ca-certificates curl git openssh-client tree aws-cli
 
 ARG TERRAFORM_DOCS_VERSION=0.16.0
 RUN curl -L -o /tmp/terraform-docs.tar.gz https://github.com/terraform-docs/terraform-docs/releases/download/v${TERRAFORM_DOCS_VERSION}/terraform-docs-v${TERRAFORM_DOCS_VERSION}-linux-amd64.tar.gz && \
@@ -13,15 +10,15 @@ RUN curl -L -o /tmp/terraform-docs.tar.gz https://github.com/terraform-docs/terr
     mv /tmp/terraform-docs /usr/local/bin/ && \
     rm -rf /tmp/*
 
-ARG TERRAFORM_VERSION=1.2.9
+ARG TERRAFORM_VERSION=1.3.9
 RUN curl -L -o /tmp/terraform.zip https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
     unzip /tmp/terraform.zip -d /tmp/ && \
     mv /tmp/terraform /usr/local/bin/terraform && \
     chmod +x /usr/local/bin/terraform && \
     rm -rf /tmp/*
 
-ARG TFLINT_VERSION=0.40.0
-ARG TFLINT_RULESET_AWS_VERSION=0.17.0
+ARG TFLINT_VERSION=0.46.1
+ARG TFLINT_RULESET_AWS_VERSION=0.23.0
 RUN wget -O /tmp/tflint.zip https://github.com/terraform-linters/tflint/releases/download/v"${TFLINT_VERSION}"/tflint_linux_amd64.zip && \
     unzip /tmp/tflint.zip -d /usr/local/bin  && \
     rm -rf /tmp/*
