@@ -60,6 +60,6 @@ publish:
 	git remote add github https://$(GIT_USERNAME):$(GIT_PASSWORD)@github.com/cmdlabs/$(CI_PROJECT_NAME)
 	git checkout master
 	git pull origin master
-	git push github --delete $(git tag -l) 
+	git push github --delete 11.0.3 0.11.11 0.5.1 1.0.0 2.0.0 3.0.0 4.0.0 5.0.0 6.0.0 4.1.0 4.2.0 4.3.0 4.4.0 5.1.0 5.2.0 5.3.0
 	curl -X POST -H 'Content-type: application/json' --data '{"text":"A new commit has been published to Github\nProject: $(CI_PROJECT_NAME)\nRef: $(CI_COMMIT_REF_NAME)\nDiff: https://github.com/cmdlabs/$(CI_PROJECT_NAME)/commit/$(CI_COMMIT_SHA)"}' $(GIT_PUBLISHING_WEBHOOK)
 PHONY: publish
