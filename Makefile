@@ -1,6 +1,6 @@
 IMAGE_NAME ?= cmdlabs/terraform-utils
 
-RELEASE_VERSION = 10.6.0
+RELEASE_VERSION = 11.0.3
 BUILD_VERSION ?= testing
 
 ifdef CI_COMMIT_REF_NAME
