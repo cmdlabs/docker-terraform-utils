@@ -1,4 +1,4 @@
-FROM alpine:3.17
+FROM alpine:3.18
 
 RUN mkdir -p /work ~/.tflint.d/plugins
 
@@ -17,8 +17,8 @@ RUN curl -L -o /tmp/terraform.zip https://releases.hashicorp.com/terraform/${TER
     chmod +x /usr/local/bin/terraform && \
     rm -rf /tmp/*
 
-ARG TFLINT_VERSION=0.46.1
-ARG TFLINT_RULESET_AWS_VERSION=0.23.0
+ARG TFLINT_VERSION=0.47.0
+ARG TFLINT_RULESET_AWS_VERSION=0.25.0
 RUN wget -O /tmp/tflint.zip https://github.com/terraform-linters/tflint/releases/download/v"${TFLINT_VERSION}"/tflint_linux_amd64.zip && \
     unzip /tmp/tflint.zip -d /usr/local/bin  && \
     rm -rf /tmp/*
