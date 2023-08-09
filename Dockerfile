@@ -29,4 +29,4 @@ RUN wget -O /tmp/tflint-ruleset-aws.zip https://github.com/terraform-linters/tfl
 
 WORKDIR /work
 
-ENTRYPOINT ["terraform"]
+#ENTRYPOINT ["terraform"]
