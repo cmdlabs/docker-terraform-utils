@@ -2,7 +2,7 @@ FROM alpine:3.18
 
 RUN mkdir -p /work ~/.tflint.d/plugins
 
-RUN apk add --update --upgrade --no-cache ca-certificates curl git openssh-client tree aws-cli
+RUN apk add --update --upgrade --no-cache ca-certificates curl git openssl-dev openssh-client tree aws-cli
 
 ARG TERRAFORM_DOCS_VERSION=0.16.0
 RUN curl -L -o /tmp/terraform-docs.tar.gz https://github.com/terraform-docs/terraform-docs/releases/download/v${TERRAFORM_DOCS_VERSION}/terraform-docs-v${TERRAFORM_DOCS_VERSION}-linux-amd64.tar.gz && \
